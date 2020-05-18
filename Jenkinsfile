@@ -4,7 +4,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'apache-maven-3.2') {
+                withMaven(maven : 'Maven 3.2') {
                     bat 'mvn clean compile'
                 }
             }
@@ -12,14 +12,14 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'apache-maven-3.2') {
+                withMaven(maven : 'Maven 3.2') {
                     bat 'mvn test'
                 }
             }
         }
         stage ('Install Stage') {
             steps {
-                withMaven(maven : 'apache-maven-3.2') {
+                withMaven(maven : 'Maven 3.2') {
                     bat 'mvn install'
                 }
             }
